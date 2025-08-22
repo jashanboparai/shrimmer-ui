@@ -6,6 +6,7 @@ import About from './components/About';
 import Restricted from './components/Restricted';
 import Protected from './components/Protected';
 import { useState } from 'react';
+import Accordian from './components/Accordian';
 
 function App() {
   const [lang, setLang] = useState('en');
@@ -29,6 +30,7 @@ function App() {
           <Route element={<Protected />}>
             <Route path='/restricted' element={<Restricted />} />
           </Route>
+          <Route path='/accordian' element={<Accordian />}/>
           <Route path="/unauthorized" element={<Unauthorized />} />
         </Routes>
 
