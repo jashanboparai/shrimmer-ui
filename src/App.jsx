@@ -7,6 +7,7 @@ import Restricted from './components/Restricted';
 import Protected from './components/Protected';
 import { useState } from 'react';
 import Accordian from './components/Accordian';
+import Comments from './components/Comments/Comments';
 
 function App() {
   const [lang, setLang] = useState('en');
@@ -16,6 +17,7 @@ function App() {
         <header className='flex bg-gray-200 justify-between'><nav>
           <ul className='flex gap-4 p-4 bg-gray-200'>
             <li><Link to="/" className='text-blue-500'>Home</Link></li>
+            <li><Link to="/comments" className='text-blue-500'>Comments</Link></li>
             <li><Link to="/restricted" className='text-blue-500'>Restricted</Link></li>
             <li><Link to="/about" className='text-blue-500'>About</Link></li>
           </ul>
@@ -30,7 +32,8 @@ function App() {
           <Route element={<Protected />}>
             <Route path='/restricted' element={<Restricted />} />
           </Route>
-          <Route path='/accordian' element={<Accordian />}/>
+          <Route path='/accordian' element={<Accordian />} />
+          <Route path='/comments' element={<Comments />} />
           <Route path="/unauthorized" element={<Unauthorized />} />
         </Routes>
 
